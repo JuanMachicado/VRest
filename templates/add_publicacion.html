@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test para insertar un usuario">
+    <title>Nuevo Usuario test</title>
+</head>
+<body>
+    <div>
+		<form method="post" name="userRegistration" enctype="multipart/form-data">
+			<fieldset>	    
+				<div>
+					<label for="id_publicacion">id_publicacion</label>
+					<input name="id_publicacion" type="text" placeholder="id_publicacion">
+				</div>
+				<div>
+					<label for="id_usuario">id_usuario</label>
+					<input name="id_usuario" type="text" placeholder="id_usuario">
+				</div>
+				<div>
+					<label for="comentario">comentario</label>
+					<input name="comentario" type="text" placeholder="comentario">
+				</div>
+				<div>
+					<label for="porcentaje">porcentaje</label>
+					<input name="porcentaje" type="text" placeholder="porcentaje">
+				</div>
+				<div>
+					<label for="lat">lat</label>
+					<input name="lat" type="text" placeholder="lat">
+				</div>
+				<div>
+					<label for="lon">lon</label>
+					<input name="lon" type="text" placeholder="lon">
+				</div>
+
+			    <div>
+					<label for="categorias">categorias</label>
+					<input name="categorias" type="text" placeholder="categorias">
+				</div>
+				<div>
+					<label for="localidad">localidad</label>
+					<input name="localidad" type="text" placeholder="localidad">
+				</div>
+				<div>
+					<label for="pais">pais</label>
+					<input name="pais" type="text" placeholder="pais">
+				</div>
+
+				<label for="image">Seleccione su imagen de perfil:&nbsp;&nbsp;&nbsp;   
+					<a href="javascript:doClick()">Para cargar su imagen haga click aqui</a>
+				</label>
+				<input type="file" name="image" accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+				<div id="fileList" class="content-head is-center">
+					<p class="content-head is-center">No selecciono ninguna foto</p>
+				</div>					    
+
+				<button type="submit" class="pure-button">Registrate</button>
+			</fieldset>
+		</form>
+     </div>  
+     <script type="text/javascript" src="/js/images.js"></script> 
+ </body>
+ </html>

@@ -1,0 +1,7 @@
+python "C:\Program Files (x86)\Google\google_appengine\dev_appserver.py" --port 8888 --host=192.168.1.155 .
+
+python "C:\Program Files (x86)\Google\google_appengine\dev_appserver.py" --port 8888 .
+
+python "C:\Program Files (x86)\Google\google_appengine\appcfg.py" update --oauth2 --no_cookies .
+
+python "C:\Program Files (x86)\Google\google_appengine\appcfg.py" update .
