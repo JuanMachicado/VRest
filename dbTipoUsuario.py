@@ -13,6 +13,7 @@ class DictModel(db.Model):
 class TIPO_USUARIO(DictModel):
     id_tipoUsuario = db.IntegerProperty(required = True)
     t_usuario = db.StringProperty(required = True)
+    FechaCreacion = db.DateTimeProperty(auto_now_add = True)
         
     @classmethod
     def register(cls, id_tipoUsuario, t_usuario):

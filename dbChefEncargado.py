@@ -14,6 +14,7 @@ class CHEF_ENCARGADO(DictModel):
     chef_usuario = db.StringProperty(required = True)
     encargado_usuario = db.StringProperty()
     empresa = db.StringProperty()
+    FechaCreacion = db.DateTimeProperty(auto_now_add = True)
         
     @classmethod
     def register(cls, chef_usuario, encargado_usuario, empresa):

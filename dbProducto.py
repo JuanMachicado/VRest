@@ -15,6 +15,7 @@ class PRODUCTO(DictModel):
     ingredientes = db.StringProperty(required = True)
     precio = db.IntegerProperty(required = True)
     tipo = db.StringProperty(required = True)
+    FechaCreacion = db.DateTimeProperty(auto_now_add = True)
         
     @classmethod
     def register(cls, nombre, ingredientes, precio, tipo):
