@@ -419,6 +419,7 @@ class ProductosAlmuerzoHandler(BaseHandler):
         else:
             self.response.write(jhelp.getAsJSONObject(result))
 
+
 class ProductosPlatoEspecialHandler(BaseHandler):
     def options(self):      
         self.response.headers['Access-Control-Allow-Origin'] = '*'
