@@ -381,6 +381,7 @@ class PedidoHandler(BaseHandler):
         else:
             result['success'] = 'true'
             pedido = PEDIDO.register(fecha, nombre, cantidad, estado, usuario) 
+        result['pedido'] = pedido.to_dict()
         pedido.put()
         if self.callback:
             self.response.write(self.callback + '(' + jhelp.getAsJSONObject(result) + ');');
@@ -520,12 +521,18 @@ class StockHandler(BaseHandler):
         result = {}
         nombre = self.request.get('nombre')
         cantidad = self.request.get('cantidad')
+        reducir = self.request.get('reducir')
         result['success'] = 'true'
         u = STOCK.by_id_nombre(nombre)
         if not u:
             u = STOCK.register(nombre, cantidad)
         else:
-            u.cantidad = cantidad
+            if reducir == "true":
+                cantidad1 = float(u.cantidad)
+                cantidad2 = float(cantidad)
+                u.cantidad = str(cantidad1 - cantidad2)
+            else:
+                u.cantidad = cantidad
         u.put()
         if self.callback:
             self.response.write(self.callback + '(' + jhelp.getAsJSONObject(result) + ');');
